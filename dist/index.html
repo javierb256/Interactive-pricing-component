@@ -6,7 +6,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="css/main.min.css">
-  
+  <script src="javascript/script.js" defer></script>
   <title>Frontend Mentor | Interactive pricing component</title>
 
 </head>
@@ -29,10 +29,18 @@
 
   <main>
     <div class="card-container">
+      <div class="cost">
+        <p>100K PAGEVIEWS</p>
 
-      Pageviews
-      $ /month
-    
+        <div>
+          <span>$<output id="rangevalue">16</output></span>
+          <p>/month</p>
+        </div>
+      </div>
+
+    <div class="price-slider">
+      <input type="range" id="price" name="price" min="1" max="1000000" oninput="rangevalue.value=value">
+    </div>
       Monthly Billing
       Yearly Billing 25% discount
 

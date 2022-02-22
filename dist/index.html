@@ -1,65 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="css/main.min.css">
-  <script src="javascript/script.js" defer></script>
-  <title>Frontend Mentor | Interactive pricing component</title>
-
-</head>
-<body>
-
-  <header>
-    <!-- <div class="header__text">
-      <h1>Simple, traffic-based pricing</h1>
-      <p>Sign-up for our 30-day trial. No credit card required. </p>
-
-    </div> -->
-    <img src="../dist/images/pattern-circles.svg">
-    <div class="header__text">
-      <h1>Simple, traffic-based pricing</h1>
-      <p>Sign-up for our 30-day trial. No credit card required. </p>
-
-    </div>
-
-  </header>
-
-  <main>
-    <div class="card-container">
-      <div class="cost">
-        <p>100K PAGEVIEWS</p>
-
-        <div>
-          <span>$<output id="rangevalue">16</output></span>
-          <p>/month</p>
-        </div>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="css/main.min.css" />
+    <script src="javascript/script.js" defer></script>
+    <title>Frontend Mentor | Interactive pricing component</title>
+  </head>
+  <body>
+    <header>
+      <img src="../dist/images/pattern-circles.svg" />
+      <div class="header__text">
+        <h1>Simple, traffic-based pricing</h1>
+        <p>Sign-up for our 30-day trial. No credit card required.</p>
       </div>
+    </header>
 
-    <div class="price-slider">
-      <input type="range" id="price" name="price" min="1" max="1000000" oninput="rangevalue.value=value">
+    <main>
+      <div class="card-container">
+        <div class="cost">
+          <p>100K PAGEVIEWS</p>
+
+          <div>
+            $<output id="rangevalue">16</output>
+            <p>/month</p>
+          </div>
+        </div>
+
+        <div class="price-slider">
+          <input
+            type="range"
+            id="price"
+            name="price"
+            min="1"
+            max="1000000"
+            oninput="rangevalue.value=value"
+          />
+        </div>
+
+        <div class="billing-options">
+          <span>
+            <p>Monthly Billing</p>
+            <label class="switch-container">
+              <input type="checkbox" id="bill-toggle">
+              <span class="round-slider"></span>
+            </label>
+          </span>
+          <span>
+            <p>Yearly Billing</p>
+            <p>25% discount</p>
+          </span>
+        </div>
+        <hr />
+
+        Unlimited websites 100% data ownership Email reports Start my trial
+      </div>
+    </main>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
     </div>
-      Monthly Billing
-      Yearly Billing 25% discount
-
-      <hr>
-    
-      Unlimited websites
-      100% data ownership
-      Email reports
-    
-      Start my trial
-    </div>
-  </main>
-  
-
-
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+  </body>
 </html>

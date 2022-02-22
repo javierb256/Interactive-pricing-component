@@ -68,7 +68,7 @@ header {
 hr{
   //margin second properties takes into account the 45px padding
   //this negates it so it would take the entire width of the container
-  margin: 40px -45px 40px;
+  margin: 40px -45px 30px;
   border: 0;
   border-top: 2px solid $lightGrayBlue;
 }
@@ -236,6 +236,37 @@ input:checked + .round-slider:before {
 // changes toggle thumb into a circle
 .round-slider:before{
   border-radius: 50%;
+}
+
+.product-description{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  ul{
+    list-style-image: url('../images/icon-check.svg');
+  }
+
+  li{
+    color: $grayBlue;
+    font-weight: weight(extra-bold);
+    font-size: $introFont;
+    padding-left: .6em;
+    padding-bottom: .5em;
+  }
+
+  button{
+    border: none;
+    border-radius: 30px;
+    background-color: $darkDesaturatedBlue;
+    color: white;
+    width: 170px;
+    height: 40px;
+    font-family: $fontFamily;
+    cursor: pointer;
+  }
 }
 
 .attribution {

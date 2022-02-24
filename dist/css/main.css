@@ -50,7 +50,7 @@ hr {
       -ms-flex-direction: column;
           flex-direction: column;
   max-width: 600px;
-  height: 400px;
+  height: 410px;
   margin: 80px auto;
   padding: 45px;
   background-color: white;
@@ -74,24 +74,12 @@ hr {
           justify-content: space-between;
 }
 
-.cost div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-}
-
 .cost output {
-  color: #293356;
-  font-size: 3em;
+  color: #858fad;
 }
 
 .cost p {
-  font-weight: 600;
+  font-weight: 800;
   color: #858fad;
 }
 
@@ -99,9 +87,29 @@ hr {
   letter-spacing: 2px;
 }
 
+.cost span {
+  font-size: 2.5em;
+  font-weight: 800;
+  color: #293356;
+  letter-spacing: normal;
+}
+
+.cost__price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cost__price span {
+  margin-right: 6px;
+}
+
 .price-slider {
   margin-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 45px;
 }
 
 input[type="range"] {
@@ -123,14 +131,53 @@ input[type="range"] {
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   border: 1px solid #10d5c2;
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   border-radius: 100px;
   background: #10d5c2;
   background-image: url("../images/icon-slider.svg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 27px;
+  background-size: 24px;
+  -webkit-box-shadow: 0px 15px 18px #a5f3eb;
+          box-shadow: 0px 15px 18px #a5f3eb;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background: #78f8eb;
+  -webkit-box-shadow: 0px 15px 15px #a5f3eb;
+          box-shadow: 0px 15px 15px #a5f3eb;
+  background-image: url("../images/icon-slider.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 24px;
+  border-color: #6cf8da;
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+  background: #03c2a9;
+  background-image: url("../images/icon-slider.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 24px;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #10d5c2;
+  height: 40px;
+  width: 40px;
+  border-radius: 100px;
+  background: #10d5c2;
+  background-image: url("../images/icon-slider.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 24px;
+  -webkit-box-shadow: 0px 15px 18px #a5f3eb;
+          box-shadow: 0px 15px 18px #a5f3eb;
   cursor: pointer;
 }
 
@@ -144,27 +191,29 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 input[type="range"]::-moz-range-thumb {
   border: 1px solid #10d5c2;
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   border-radius: 100px;
   background: #10d5c2;
   background-image: url("../images/icon-slider.svg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 27px;
+  background-size: 24px;
+  box-shadow: 0px 15px 18px #a5f3eb;
   cursor: pointer;
 }
 
 input[type="range"]::-ms-thumb {
   border: 1px solid #10d5c2;
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   border-radius: 100px;
   background: #10d5c2;
   background-image: url("../images/icon-slider.svg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 27px;
+  background-size: 24px;
+  box-shadow: 0px 15px 18px #a5f3eb;
   cursor: pointer;
 }
 
@@ -189,6 +238,7 @@ input[type="range"]::-ms-thumb {
 
 .billing-options p {
   display: inline-block;
+  font-size: 13px;
 }
 
 .billing-options span:nth-child(1) {
@@ -200,9 +250,12 @@ input[type="range"]::-ms-thumb {
 }
 
 .billing-options p:nth-child(2) {
-  padding: 5px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
   border-radius: 15px;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 800;
   background-color: #feece7;
   color: #ff8c66;
@@ -283,20 +336,24 @@ input:checked + .round-slider:before {
 .product-description li {
   color: #858fad;
   font-weight: 800;
-  font-size: 15px;
+  font-size: 13px;
   padding-left: .6em;
-  padding-bottom: .5em;
+  padding-bottom: .7em;
 }
 
 .product-description button {
   border: none;
   border-radius: 30px;
   background-color: #293356;
-  color: white;
+  color: #c5cbed;
   width: 170px;
   height: 40px;
   font-family: "Manrope", sans-serif;
   cursor: pointer;
+}
+
+.product-description button:hover {
+  color: white;
 }
 
 .attribution {

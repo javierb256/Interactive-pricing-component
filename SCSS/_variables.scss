@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap');
 
-
+//media breakpoints
+$mobile: 640px;
+$tablet: 768px;
+$desktop: 1024px;
 
 /////////Colors///////
 //Primary
@@ -36,6 +39,7 @@ $subheadings: hsl(0, 0%, 58%);
 
 //Body 
 $introFont: 15px;
+$bodyFont: 1em;
 
 //Font
 $fontFamily: 'Manrope', sans-serif;
@@ -45,3 +49,4 @@ $font-weights: (
     "semi-bold": 600,
     "extra-bold": 800
 );
+

@@ -43,6 +43,16 @@
   align-items: center;
 }
 
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin changeFont($bodyFont) {
+  font-size: $bodyFont;
+}
+
 html {
   font-family: $fontFamily;
 }
@@ -60,6 +70,14 @@ header {
   p {
     margin-top: 10px;
     color: $subheadings;
+
+    @include mobile() {
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.4em;
+      line-height: 27px;
+    }
   }
 
   .header__text {
@@ -68,15 +86,23 @@ header {
     right: 0;
     text-align: center;
     top: 30%;
+
+    @include mobile() {
+      font-size: 0.7em;
+    }
   }
 }
 
-hr{
+hr {
   //margin second properties takes into account the 45px padding
   //this negates it so it would take the entire width of the container
   margin: 40px -45px 30px;
   border: 0;
   border-top: 2px solid $lightGrayBlue;
+
+  @include mobile() {
+    margin: 37px -25px 30px;
+  }
 }
 
 .card-container {
@@ -90,37 +116,48 @@ hr{
   border-radius: 6px;
   box-shadow: 0px 5px 25px 1px rgb(211, 217, 218);
   //   box-shadow: 0px 5px 25px 1px rgb(218, 218, 218);
+  @include mobile {
+    max-width: 450px;
+    width: 85%;
+    height: 460px;
+    padding: 35px 25px;
+  }
 }
 
 .cost {
   @include flexLine();
   justify-content: space-between;
 
-  output{
+  @include mobile {
+    flex-direction: column;
+  }
+
+  output {
     color: $grayBlue;
   }
 
-  p{
+  p {
     font-weight: weight(extra-bold);
     color: $grayBlue;
   }
-  
-  
+
   p:nth-child(1) {
     letter-spacing: 2px;
+    @include mobile() {
+      font-size: 0.8rem;
+    }
   }
   span {
     font-size: 2.5em;
     font-weight: weight(extra-bold);
     color: $darkDesaturatedBlue;
     letter-spacing: normal;
-    
   }
 }
 
-.cost__price{
+.cost__price {
   @include alignItems();
-  span{
+  span {
     margin-right: 6px;
   }
 }
@@ -159,14 +196,14 @@ input[type="range"]::-webkit-slider-thumb:hover {
   border-color: rgb(108, 248, 218);
 }
 
-input[type="range"]::-webkit-slider-thumb:active{
+input[type="range"]::-webkit-slider-thumb:active {
   background: rgb(3, 194, 169);
   background-image: url("../images/icon-slider.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 24px;
 
-  cursor:grab ;
+  cursor: grab;
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -193,21 +230,38 @@ input[type="range"]::-ms-thumb {
   align-items: center;
   // background-color: red;
   margin-right: 20px;
-  p, label{
+
+  @include mobile() {
+    margin-right: 0px;
+    justify-content: flex-end;
+  }
+  p,
+  label {
     @include fontStyle();
   }
   p {
     display: inline-block;
     font-size: 13px;
+
+    @include mobile() {
+      font-size: 0.7em;
+      font-weight: weight(semi-bold);
+    }
   }
 
-  span:nth-child(1){
+  span:nth-child(1) {
     margin-right: 20px;
+    @include mobile() {
+      margin-right: 10px;
+    }
   }
-  p:nth-child(1){
+  p:nth-child(1) {
     margin-right: 10px;
+    @include mobile() {
+      margin-right: 7px;
+    }
   }
-  p:nth-child(2){
+  p:nth-child(2) {
     padding-top: 4px;
     padding-bottom: 4px;
     padding-left: 5px;
@@ -217,17 +271,41 @@ input[type="range"]::-ms-thumb {
     font-weight: weight(extra-bold);
     background-color: $lightGrayRed;
     color: $lightRed;
+    @include mobile() {
+      display: none;
+    }
+  }
+
+  .min-discount {
+    display: none;
+    @include mobile() {
+      display: inline-block;
+      padding-top: 4px;
+      padding-bottom: 4px;
+      padding-left: 7px;
+      padding-right: 9px;
+      border-radius: 15px;
+      font-size: 11px;
+      font-weight: weight(extra-bold);
+      background-color: $lightGrayRed;
+      color: $lightRed;
+      width: 42px;
+    }
   }
 }
 
-.switch-container{
+.switch-container {
   position: relative;
   display: inline-block;
   width: 50px;
   height: 27px;
+  @include mobile() {
+    width: 45px;
+    height: 22px;
+  }
 }
 
-#bill-toggle{
+#bill-toggle {
   opacity: 0;
   width: 0;
   height: 0;
@@ -241,8 +319,8 @@ input[type="range"]::-ms-thumb {
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .round-slider::before {
@@ -253,8 +331,12 @@ input[type="range"]::-ms-thumb {
   left: 5px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  @include mobile() {
+    height: 14px;
+    width: 14px;
+  }
 }
 
 //input color change when it is checked
@@ -270,35 +352,41 @@ input:checked + .round-slider:before {
 }
 
 //change slider border radius
-.round-slider{
+.round-slider {
   border-radius: 20px;
 }
 
 // changes toggle thumb into a circle
-.round-slider:before{
+.round-slider:before {
   border-radius: 50%;
 }
 
-.product-description{
+.product-description {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-left: 15px;
   padding-right: 15px;
 
-  ul{
-    list-style-image: url('../images/icon-check.svg');
+  @include mobile() {
+    flex-direction: column;
+  }
+  ul {
+    list-style-image: url("../images/icon-check.svg");
   }
 
-  li{
+  li {
     color: $grayBlue;
     font-weight: weight(extra-bold);
     font-size: 13px;
-    padding-left: .6em;
-    padding-bottom: .7em;
+    padding-left: 0.6em;
+    padding-bottom: 0.7em;
+    @include mobile() {
+      font-weight: weight(semi-bold);
+    }
   }
 
-  button{
+  button {
     border: none;
     border-radius: 30px;
     background-color: $darkDesaturatedBlue;
@@ -307,9 +395,12 @@ input:checked + .round-slider:before {
     height: 40px;
     font-family: $fontFamily;
     cursor: pointer;
+    @include mobile() {
+      margin-top: 15px;
+    }
   }
 
-  button:hover{
+  button:hover {
     color: white;
   }
 }

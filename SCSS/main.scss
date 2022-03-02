@@ -286,7 +286,7 @@ input[type="range"]::-moz-range-thumb {
   @include sliderThumb();
 }
 
-input[type=range]::-moz-range-thumb {
+input[type="range"]::-moz-range-thumb {
   @include sliderThumb();
 }
 
@@ -305,7 +305,7 @@ input[type="range"]::-ms-thumb {
     margin-right: 0px;
     justify-content: flex-end;
   }
-  @include smallMobile(){
+  @include smallMobile() {
     justify-content: center;
   }
   p,

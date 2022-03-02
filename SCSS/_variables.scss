@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap");
 
 //media breakpoints
 $smallMobile: 400px;
@@ -10,11 +10,11 @@ $desktop: 1024px;
 //Primary
 
 //Full slider Bar
-$softCyan: hsl(174,77%,80%);
+$softCyan: hsl(174, 77%, 80%);
 //Slider Background
-$strongCyan: hsl(174, 86%,45%);
+$strongCyan: hsl(174, 86%, 45%);
 //Discound Background
-$lightGrayRed: hsl(14,92%, 95%);
+$lightGrayRed: hsl(14, 92%, 95%);
 //Discount Text
 $lightRed: hsl(15, 100%, 70%);
 //CTA Text
@@ -22,7 +22,7 @@ $paleBlue: hsl(226, 100%, 87%);
 
 //Netural Colors
 //Pricing component Background
-$white: hsl(0,0%,100%);
+$white: hsl(0, 0%, 100%);
 //Main Background
 $veryPaleBlue: hsl(230, 100%, 99%);
 //Empty SliderBar
@@ -38,16 +38,15 @@ $subheadings: hsl(0, 0%, 58%);
 
 //////Typography//////
 
-//Body 
+//Body
 $introFont: 15px;
 $bodyFont: 1em;
 
 //Font
-$fontFamily: 'Manrope', sans-serif;
+$fontFamily: "Manrope", sans-serif;
 
 //Font Weights
 $font-weights: (
-    "semi-bold": 600,
-    "extra-bold": 800
+  "semi-bold": 600,
+  "extra-bold": 800,
 );
-

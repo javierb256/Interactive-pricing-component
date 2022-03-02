@@ -318,7 +318,7 @@ input[type="range"]::-moz-range-thumb {
   cursor: pointer;
 }
 
-input[type=range]::-moz-range-thumb {
+input[type="range"]::-moz-range-thumb {
   border: 1px solid #10d5c2;
   height: 40px;
   width: 40px;

@@ -11,6 +11,8 @@ if (cost.innerText == "") {
   cost.innerText = "$16.00";
 }
 
+console.log(rangeValue.value);
+
 rangeSlider.addEventListener("input", priceChange);
 toggle.addEventListener("click", togglePressed);
 

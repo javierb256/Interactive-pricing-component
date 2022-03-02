@@ -13,7 +13,6 @@ html {
 body {
   background: url("../images/bg-pattern.svg") no-repeat;
   background-size: 100% 400px;
-  background-color: #fafbff;
 }
 
 header {
@@ -100,22 +99,47 @@ hr {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-}
-
-@media (max-width: 640px) {
-  .cost {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
+  /*Page structure changes when in mobile
+  the slider moves above the cost per month
+  */
 }
 
 .cost output {
   color: #858fad;
+}
+
+.cost .cost__price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+@media (max-width: 640px) {
+  .cost .cost__price {
+    margin-bottom: 25px;
+  }
+}
+
+.cost .price-slider {
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .cost .price-slider {
+    margin-bottom: 25px;
+  }
 }
 
 .cost p {
@@ -140,6 +164,34 @@ hr {
   letter-spacing: normal;
 }
 
+@media (max-width: 640px) {
+  .cost {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .cost #rangevalue {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .cost .price-slider {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .cost .cost__price {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+}
+
 .cost__price {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -158,6 +210,23 @@ hr {
   margin-bottom: 45px;
 }
 
+@media (max-width: 640px) {
+  .price-slider {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    width: 100%;
+  }
+}
+
+/* Styling Guides for the range slider
+https://nikitahl.com/style-range-input-css
+https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/
+*/
+/*
+webkit - used by Safari browsers
+moz - mozzilla browser
+*/
 input[type="range"] {
   -webkit-appearance: none;
   width: 100%;
@@ -249,6 +318,20 @@ input[type="range"]::-moz-range-thumb {
   cursor: pointer;
 }
 
+input[type=range]::-moz-range-thumb {
+  border: 1px solid #10d5c2;
+  height: 40px;
+  width: 40px;
+  border-radius: 100px;
+  background: #10d5c2;
+  background-image: url("../images/icon-slider.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 24px;
+  box-shadow: 0px 15px 18px #a5f3eb;
+  cursor: pointer;
+}
+
 input[type="range"]::-ms-thumb {
   border: 1px solid #10d5c2;
   height: 40px;
@@ -285,6 +368,14 @@ input[type="range"]::-ms-thumb {
   }
 }
 
+@media (max-width: 400px) {
+  .billing-options {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 .billing-options p,
 .billing-options label {
   font-size: 15px;
@@ -299,8 +390,25 @@ input[type="range"]::-ms-thumb {
 
 @media (max-width: 640px) {
   .billing-options p {
-    font-size: 0.7em;
+    font-size: 0.8em;
     font-weight: 600;
+  }
+}
+
+@media (max-width: 400px) {
+  .billing-options p {
+    font-size: 0.6em;
+  }
+}
+
+@media (max-width: 400px) {
+  .billing-options span {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
@@ -321,6 +429,12 @@ input[type="range"]::-ms-thumb {
 @media (max-width: 640px) {
   .billing-options p:nth-child(1) {
     margin-right: 7px;
+  }
+}
+
+@media (max-width: 400px) {
+  .billing-options p:nth-child(1) {
+    margin-right: 5px;
   }
 }
 
@@ -376,6 +490,13 @@ input[type="range"]::-ms-thumb {
   }
 }
 
+@media (max-width: 400px) {
+  .switch-container {
+    width: 33px;
+    height: 16px;
+  }
+}
+
 #bill-toggle {
   opacity: 0;
   width: 0;
@@ -413,6 +534,15 @@ input[type="range"]::-ms-thumb {
   }
 }
 
+@media (max-width: 400px) {
+  .round-slider::before {
+    height: 12px;
+    width: 11px;
+    bottom: 2px;
+    left: 3px;
+  }
+}
+
 input:checked + .round-slider {
   background-color: #10d5c2;
 }
@@ -420,6 +550,13 @@ input:checked + .round-slider {
 input:checked + .round-slider:before {
   -webkit-transform: translateX(26px);
   transform: translateX(22px);
+}
+
+@media (max-width: 400px) {
+  input:checked + .round-slider:before {
+    -webkit-transform: translateX(15px);
+    transform: translateX(15px);
+  }
 }
 
 .round-slider {

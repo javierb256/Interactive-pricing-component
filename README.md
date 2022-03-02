@@ -57,7 +57,7 @@ I have started using Sass more in my projects and as I am still a beginner worki
 
 - [Styling range input with CSS](https://nikitahl.com/style-range-input-css) - This article greatly helped with with styling the range input component. The author gave a great breakdown on what each property does and how
 to apply different stylings to different parts of the slider.
-- [Styling Cross-Browser Compatible Range Inputs with CSS]https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/) - Another article on styling range inputs to be used on different browsers.
+- [Styling Cross-Browser Compatible Range Inputs with CSS](https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/) - Another article on styling range inputs to be used on different browsers.
 
 ## Author
 

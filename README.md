@@ -31,7 +31,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/javierb256/Interactive-pricing-component)
-- Live Site URL: [https://interactive-pricing-component-iota-five.vercel.app/)
+- Live Site URL: [[https://interactive-pricing-component-iota-five.vercel.app/)](https://javierb256.github.io/Interactive-pricing-component/)
 
 ## My process
 
